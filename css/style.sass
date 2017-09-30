@@ -1,0 +1,39 @@
+@import reset
+@import global-variables
+@import temp
+
+// ** Layout ** //
+.site-wrap
+    @extend .text
+    display: flex
+    background-color: $dark-blue
+
+.nav
+    display: flex
+    background-color: $dark-blue
+    flex-direction: column
+    height: 100vh
+    flex: 1 1 auto
+
+.content
+    display: flex
+    flex-direction: column
+    flex: 5 5 auto
+
+.hero
+    display: flex
+    background-color: $light-blue
+    flex: 4
+    
+
+.projects
+    display: flex
+    background-color: lighten($dark-blue, 30%)
+    flex: 3
+    
+
+.blog
+    display: flex
+    background-color: $yellow
+    flex: 1
+    
