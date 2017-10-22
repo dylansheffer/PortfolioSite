@@ -1,77 +1,88 @@
-@import reset
-@import global-variables
-@import temp
+@import _global-variables
+@import _reset
 
-// ** Layout ** //
-html
-    box-sizing: border-box
+*, *:before, *:after
+  box-sizing: border-box
 
-*
-    box-sizing: inherit
-    &:before, &:after
-        box-sizing: inherit
+body
+  font-family: 'Open Sans', 'sans-serif'
+  background-color: #fff
+  color: #444
 
-a
-    width: 100%
-    display: inline-block
+h1, p
+  margin: 0 0 1em 0
 
-.site-wrap
-    @extend .text
-    display: flex
-    background-color: $dark-blue
-    
 
-.nav
-    display: flex
-    background-color: $dark-blue
-    height: 100vh
-    max-width: 160px
-    flex: 1
-    justify-content: center
-    flex-wrap: wrap
-    
-.content
+.wrapper
+  max-width: 100%
+  margin: 0 20px
+  display: grid
+  grid-gap: 10px
+
+
+@media screen and (min-width: 600px)
+
+  /* no grid support? */
+  .nav
+    float: left
+    width: 19.1489%
+
+
+  .content-wrap
+    float: right
+    width: 79.7872%
+
+  .wrapper
+    margin: 0 auto
+    grid-template-columns: 1fr 3fr
+    grid-auto-rows: minmax(150px, auto)
+
+  .footer
+    grid-column: 2 / -1
+    grid-row: 7
+    /* needed for the floated layout */
+    clear: both
+
+  .nav
+    grid-column: 1
+    grid-row: 1 / 8
+
+  .content-wrap
+
+  .content
+    grid-column: 2
+    grid-row: 1 / 8
     display: flex
     flex-direction: column
-    flex: 5
+    align-content: stretch
 
-.hero
-    display: flex
+  .hero
     background-color: $light-blue
-    flex: 4
-    
 
-.projects
-    display: flex
-    background-color: lighten($dark-blue, 30%)
-    flex: 3
-    
+  .projects
+    background-color: $dark-blue
 
-.blog
-    display: flex
+  .blog
     background-color: $yellow
+
+  .content__hero
+    flex: 3
+
+  .content__projects
+    flex: 2
+
+  .content__blog
     flex: 1
 
+.wrapper > *
+  background-color: #444
+  color: #fff
+  font-size: 150%
+  /* needed for the floated layout*/
+  margin-bottom: 10px
 
-// ** Navigation ** //
-.nav__links
-    color: white
-    font-size: 25px
+/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+@supports (display: grid)
+  .wrapper > *
+    width: auto
     margin: 0
-    padding: 10px
-    list-style-type: none
-    flex: 1
-    display: flex
-    flex-direction: column
-    justify-content: center
-    
-    li
-        flex: 1
-        a
-            text-decoration: none
-            color: white
-
-.nav__logo
-    background: url(/dist/img/logo.svgz) no-repeat top left
-    width: 100%
-    height: 50px
