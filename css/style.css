@@ -189,9 +189,9 @@ body {
   background: #242a31;
   overflow: hidden;
   transition: width .3s ease;
-  display: grid;
-  grid-template-columns: 5rem;
-  grid-template-rows: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: space-between;
   text-align: center;
 }
 

@@ -94,6 +94,9 @@
 
 //------------------------------------
 $nav-width: 5rem
+$dark-blue: #242a31
+$light-blue: #415368
+$yellow: #fcee27
 //------------------------------------
 
 *, *:before, *:after
@@ -112,9 +115,12 @@ body
   background: $dark-blue
   overflow: hidden
   transition: width .3s ease
-  display: grid
-  grid-template-columns: $nav-width
-  grid-template-rows: auto
+  display: flex
+  flex-flow: column nowrap
+  //justify-content: space-between
+  align-content: space-between
+  // grid-template-columns: $nav-width
+  // grid-template-rows: auto
   text-align: center
 
   &:hover, &.pinned
