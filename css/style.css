@@ -1,4 +1,6 @@
 /* CSS Normalize */
+@import url(https://fonts.googleapis.com/css?family=Raleway:400);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100);
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block;
 }
@@ -169,89 +171,76 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box;
 }
 
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Open Sans', 'sans-serif';
-  background-color: #fff;
-  color: #444;
+  background: #EEE;
+  font-family: Roboto,'Helvetica Neue', Helvetica, sans-serif;
 }
 
-h1, p {
-  margin: 0 0 1em 0;
-}
-
-.wrapper {
-  max-width: 100%;
-  margin: 0 20px;
+.nav {
+  position: fixed;
+  height: 100vh;
+  width: 5rem;
+  background: #242a31;
+  overflow: hidden;
+  transition: width .3s ease;
   display: grid;
-  grid-gap: 10px;
+  grid-template-columns: 5rem;
+  grid-template-rows: auto;
+  text-align: center;
 }
 
-@media screen and (min-width: 600px) {
-  /* no grid support? */
-  .nav {
-    float: left;
-    width: 19.1489%;
-  }
-  .content-wrap {
-    float: right;
-    width: 79.7872%;
-  }
-  .wrapper {
-    margin: 0 auto;
-    grid-template-columns: 1fr 3fr;
-    grid-auto-rows: minmax(150px, auto);
-  }
-  .footer {
-    grid-column: 2 / -1;
-    grid-row: 7;
-    /* needed for the floated layout */
-    clear: both;
-  }
-  .nav {
-    grid-column: 1;
-    grid-row: 1 / 8;
-  }
-  .content {
-    grid-column: 2;
-    grid-row: 1 / 8;
-    display: flex;
-    flex-direction: column;
-    align-content: stretch;
-  }
-  .hero {
-    background-color: #415368;
-  }
-  .projects {
-    background-color: #242a31;
-  }
-  .blog {
-    background-color: #fcee27;
-  }
-  .content__hero {
-    flex: 3;
-  }
-  .content__projects {
-    flex: 2;
-  }
-  .content__blog {
-    flex: 1;
-  }
+.nav__logo {
+  width: 3.5rem;
 }
 
-.wrapper > * {
-  background-color: #444;
-  color: #fff;
-  font-size: 150%;
-  /* needed for the floated layout*/
-  margin-bottom: 10px;
+.nav__item {
+  width: 5rem;
+  grid-column: 1/1;
 }
 
-/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
-@supports (display: grid) {
-  .wrapper > * {
-    width: auto;
-    margin: 0;
-  }
+.nav__item:hover {
+  background: #444;
+}
+
+.nav__item a {
+  text-decoration: none;
+  color: #EEE;
+}
+
+.nav__item--active {
+  font-size: 1.1rem;
+}
+
+.nav__item--active .fa {
+  font-size: 2.1rem;
+}
+
+.nav__icon {
+  width: 5rem;
+  font-size: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.nav__social {
+  grid-row-start: -1;
+  grid-row-end: -1;
+}
+
+section {
+  padding: 2rem 5rem 2rem 10rem;
+  min-height: 100vh;
+}
+
+section h1 {
+  font-family: Raleway, Roboto, sans-serif;
+  font-size: 2.2rem;
 }
  
 
