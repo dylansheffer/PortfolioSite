@@ -114,43 +114,51 @@ body
   width: $nav-width
   background: $dark-blue
   overflow: hidden
-  transition: width .3s ease
   display: flex
-  flex-flow: column nowrap
-  //justify-content: space-between
-  align-content: space-between
-  // grid-template-columns: $nav-width
-  // grid-template-rows: auto
+  flex-direction: column
   text-align: center
-
-  &:hover, &.pinned
-
-.nav__logo
-  width: $nav-width * .7
+  align-items: baseline
+  justify-content: space-between
 
 .nav__item
   width: $nav-width
-  grid-column: 1/1
-  &:hover
-    background: #444
-  a
-    text-decoration: none
-    color: #EEE
+  text-decoration: none
+  color: #EEE
 
-.nav__item--active
-  font-size: 1.1rem
-  .fa
-    font-size: 2.1rem
+.nav__link
+  width: $nav-width
+  display: flex
+  flex-direction: column
+  justify-content: center
+  border-right: 3px solid transparent
+  &:hover, &.nav__item--active
+    border-right: 3px solid $yellow
+    // background-color: lighten($dark-blue, 5%)
 
 .nav__icon
   width: $nav-width
   font-size: 2rem
   padding: 1rem 0
-  text-align: center
+
+.nav__logo
+  align-self: flex-start
+  margin-top: 10px
+  margin-bottom: 40px
+  img
+    width: $nav-width * .7
 
 .nav__social
-  grid-row-start: -1
-  grid-row-end: -1
+  margin-bottom: 10px
+
+.fa-twitter:hover
+  background-color: #3F8DBF
+
+.fa-linkedin:hover
+  background-color: #23527c
+
+.drop-shadow
+  -webkit-filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.12)) drop-shadow(0 1px 10px rgba(0, 0, 0, 0.14)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12)) drop-shadow(0 -1px 3px rgba(0, 0, 0, 0.1))
+  filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.12)) drop-shadow(0 1px 10px rgba(0, 0, 0, 0.14)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12)) drop-shadow(0 -1px 3px rgba(0, 0, 0, 0.1))
 
 section
   padding: 2rem 5rem 2rem ($nav-width + 5)
