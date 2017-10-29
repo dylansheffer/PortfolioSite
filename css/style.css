@@ -171,6 +171,78 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box;
 }
 
+.wrapper {
+  max-width: 100%;
+  margin: 0 20px;
+  display: grid;
+  grid-gap: 10px;
+}
+
+@media screen and (min-width: 600px) {
+  /* no grid support? */
+  .nav {
+    float: left;
+    width: 19.1489%;
+  }
+  .content-wrap {
+    float: right;
+    width: 79.7872%;
+  }
+  .wrapper {
+    margin: 0 auto;
+    grid-template-columns: 1fr 3fr;
+    grid-auto-rows: minmax(150px, auto);
+  }
+  .footer {
+    grid-column: 2 / -1;
+    grid-row: 7;
+    /* needed for the floated layout */
+    clear: both;
+  }
+  .nav {
+    grid-column: 1;
+    grid-row: 1 / 8;
+  }
+  .content {
+    grid-column: 2;
+    grid-row: 1 / 8;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+  }
+  .hero {
+    background-color: #415368;
+  }
+  .projects {
+    background-color: #242a31;
+  }
+  .blog {
+    background-color: #fcee27;
+  }
+  .content__hero {
+    flex: 3;
+  }
+  .content__projects {
+    flex: 2;
+  }
+  .content__blog {
+    flex: 1;
+  }
+}
+
+.wrapper > * {
+  /* needed for the floated layout*/
+  margin-bottom: 10px;
+}
+
+/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+@supports (display: grid) {
+  .wrapper > * {
+    width: auto;
+    margin: 0;
+  }
+}
+
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -206,11 +278,53 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-right: 3px solid transparent;
+  border-right: 2px solid transparent;
+  position: relative;
+  vertical-align: middle;
 }
 
-.nav__link:hover, .nav__link.nav__item--active {
-  border-right: 3px solid #fcee27;
+.nav__link.nav__item--active::before, .nav__link.nav__item--active::after {
+  content: '';
+  position: absolute;
+  border-right: 2px solid #fcee27;
+  width: 100%;
+  height: 100%;
+  top: inherit;
+  left: inherit;
+  bottom: inherit;
+  right: inherit;
+}
+
+.nav__link::before, .nav__link::after {
+  content: '';
+  position: absolute;
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+
+.nav__link::before {
+  top: inherit;
+  left: inherit;
+}
+
+.nav__link::after {
+  bottom: inherit;
+  right: inherit;
+}
+
+.nav__link:hover::before, .nav__link:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+.nav__link:hover::before {
+  border-right-color: #fcee27;
+  transition: height 0.25s;
+}
+
+.nav__link:hover::after {
+  transition: border-color 0s ease-out 0.5s, height 0.25s ease-out 0.25s;
 }
 
 .nav__icon {
