@@ -1,100 +1,6 @@
 @import _global-variables
 @import _reset
-
-*, *:before, *:after
-  box-sizing: border-box
-
-// body
-//   font-family: 'Open Sans', 'sans-serif'
-//   background-color: #fff
-//   color: #444
-
-// h1, p
-//   margin: 0 0 1em 0
-
-
-.wrapper
-  max-width: 100%
-  margin: 0 20px
-  display: grid
-  grid-gap: 10px
-
-
-@media screen and (min-width: 600px)
-
-  /* no grid support? */
-  .nav
-    float: left
-    width: 19.1489%
-
-
-  .content-wrap
-    float: right
-    width: 79.7872%
-
-  .wrapper
-    margin: 0 auto
-    grid-template-columns: 1fr 3fr
-    grid-auto-rows: minmax(150px, auto)
-
-  .footer
-    grid-column: 2 / -1
-    grid-row: 7
-    /* needed for the floated layout */
-    clear: both
-
-  .nav
-    grid-column: 1
-    grid-row: 1 / 8
-
-  .content-wrap
-
-  .content
-    grid-column: 2
-    grid-row: 1 / 8
-    display: flex
-    flex-direction: column
-    align-content: stretch
-
-  .hero
-    background-color: $light-blue
-
-  .projects
-    background-color: $dark-blue
-
-  .blog
-    background-color: $yellow
-
-  .content__hero
-    flex: 3
-
-  .content__projects
-    flex: 2
-
-  .content__blog
-    flex: 1
-
-.wrapper > *
-  /* needed for the floated layout*/
-  margin-bottom: 10px
-
-/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
-@supports (display: grid)
-  .wrapper > *
-    width: auto
-    margin: 0
-
-// ==== Starts Nav Testing
-@import url(https://fonts.googleapis.com/css?family=Raleway:400)
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100)
-
-//------------------------------------
-$nav-width: 5rem
-$dark-blue: #242a31
-$light-blue: #415368
-$yellow: #fcee27
-//------------------------------------
 
 *, *:before, *:after
   -webkit-box-sizing: border-box
@@ -104,6 +10,42 @@ $yellow: #fcee27
 body
   background: #EEE
   font-family: Roboto,'Helvetica Neue', Helvetica, sans-serif
+
+.wrapper
+  max-width: 100%
+  margin: 0 20px
+  display: flex
+  flex-direction: column
+  grid-gap: 10px
+
+@media screen and (min-width: 600px)
+  .wrapper
+    margin: 0 auto
+
+  .content
+    padding: 2rem 5rem 2rem ($nav-width + 5)
+    color: white
+
+  .hero
+    background-color: $light-blue
+    height: 50vh
+    min-height: 50vh
+    flex-basis: auto
+    display: flex
+
+  .hero__image
+    height: 50vh
+
+  .latest-work
+    background-color: $dark-blue
+    min-height: 50vh
+    flex-basis: auto
+
+  .footer
+    background-color: tomato
+    color: black
+    flex-basis: 5vh
+
 
 .nav
   position: fixed
@@ -200,14 +142,3 @@ body
 .drop-shadow
   -webkit-filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.12)) drop-shadow(0 1px 10px rgba(0, 0, 0, 0.14)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12)) drop-shadow(0 -1px 3px rgba(0, 0, 0, 0.1))
   filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.12)) drop-shadow(0 1px 10px rgba(0, 0, 0, 0.14)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12)) drop-shadow(0 -1px 3px rgba(0, 0, 0, 0.1))
-
-.border
-
-
-section
-  padding: 2rem 5rem 2rem ($nav-width + 5)
-  min-height: 100vh
-
-  h1
-    font-family: Raleway, Roboto, sans-serif
-    font-size: 2.2rem
