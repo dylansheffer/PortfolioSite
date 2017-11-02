@@ -194,14 +194,24 @@ body {
     color: white;
   }
   .hero {
+    padding: 2rem 5rem 0rem 5rem;
     background-color: #415368;
     height: 50vh;
-    min-height: 50vh;
-    flex-basis: auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 359.19px auto;
+    grid-template-rows: 75px auto;
   }
   .hero__image {
-    height: 50vh;
+    height: 410px;
+    width: 359.19px;
+    grid-column: 1 / 2;
+    grid-row: -1;
+  }
+  .hero__heading {
+    grid-column: 2;
+  }
+  .hero__subtext {
+    grid-column: 2;
   }
   .latest-work {
     background-color: #242a31;
@@ -314,6 +324,11 @@ body {
 
 .fa-linkedin:hover {
   background-color: #23527c;
+}
+
+.fa-github:hover {
+  background-color: #f5f5f5;
+  color: #333;
 }
 
 .drop-shadow {
