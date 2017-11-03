@@ -27,30 +27,40 @@ body
     color: white
 
   $hero__image--height: 410px
-  $hero__image--width: 359.19px
+  $hero__image--width: 359px
 
   .hero
-    padding: 2rem 5rem 0rem $nav-width;
+    padding: 0rem 0rem 0rem $nav-width;
     background-color: $light-blue
-    height: 50vh
+    height: 450px
     display: grid
-    grid-template-columns: $hero__image--width auto
-    grid-template-rows: 75px auto
+    grid-template-columns: 1fr 2fr
+    grid-template-areas: "hero__image hero__heading" "hero__image hero__subtext" "hero__image hero__subtext"
+
+    //grid-template-rows: 40px repeat(3, 1fr)
 
 
   .hero__image
-    height: $hero__image--height
-    width: $hero__image--width
-    grid-column: 1 / 2
-    grid-row: -1
+    grid-area: hero__image
+    position: relative
+    // grid-column: 1 / 2
+    // grid-row: 1 / 5
+    img
+      position: absolute
+      bottom: 0
+      left: 0
+      height: 400px
+      //width: 100%
 
 
   .hero__heading
-    grid-column: 2
+    grid-area: hero__heading
+    margin: 100px 50px
+
 
   .hero__subtext
-    grid-column: 2
-
+    grid-area: hero__subtext
+    margin: 50px
 
 
   .latest-work
