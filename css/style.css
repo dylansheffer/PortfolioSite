@@ -186,7 +186,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  grid-gap: 10px;
 }
 
 @media screen and (min-width: 600px) {
@@ -239,10 +238,12 @@ body {
 
 .nav {
   position: fixed;
-  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
   width: 5rem;
   background: #242a31;
-  overflow: hidden;
+  overflow-y: scroll;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -365,6 +366,19 @@ body {
 .drop-shadow {
   -webkit-filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.12)) drop-shadow(0 1px 10px rgba(0, 0, 0, 0.14)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12)) drop-shadow(0 -1px 3px rgba(0, 0, 0, 0.1));
   filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.12)) drop-shadow(0 1px 10px rgba(0, 0, 0, 0.14)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12)) drop-shadow(0 -1px 3px rgba(0, 0, 0, 0.1));
+}
+
+@media screen and (max-height: 600px) {
+  .nav {
+    overflow: scroll;
+    display: block;
+  }
+  .nav__icon {
+    font-size: 1.75rem;
+  }
+  .nav__logo img {
+    width: 3rem;
+  }
 }
  
 

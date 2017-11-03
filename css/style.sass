@@ -16,7 +16,6 @@ body
   margin: 0 20px
   display: flex
   flex-direction: column
-  grid-gap: 10px
 
 @media screen and (min-width: 600px)
   .wrapper
@@ -37,21 +36,15 @@ body
     grid-template-columns: 1fr 2fr
     grid-template-areas: "hero__image hero__heading" "hero__image hero__subtext" "hero__image hero__subtext"
 
-    //grid-template-rows: 40px repeat(3, 1fr)
-
 
   .hero__image
     grid-area: hero__image
     position: relative
-    // grid-column: 1 / 2
-    // grid-row: 1 / 5
     img
       position: absolute
       bottom: 0
       left: 0
       height: 400px
-      //width: 100%
-
 
   .hero__heading
     grid-area: hero__heading
@@ -76,10 +69,12 @@ body
 
 .nav
   position: fixed
-  height: 100vh
+  top: 0
+  bottom: 0
+  left: 0
   width: $nav-width
   background: $dark-blue
-  overflow: hidden
+  overflow-y: scroll
   display: flex
   flex-direction: column
   text-align: center
@@ -173,3 +168,15 @@ body
 .drop-shadow
   -webkit-filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.12)) drop-shadow(0 1px 10px rgba(0, 0, 0, 0.14)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12)) drop-shadow(0 -1px 3px rgba(0, 0, 0, 0.1))
   filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.12)) drop-shadow(0 1px 10px rgba(0, 0, 0, 0.14)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12)) drop-shadow(0 -1px 3px rgba(0, 0, 0, 0.1))
+
+@media screen and (max-height: 600px)
+  .nav
+    overflow: scroll
+    display: block
+
+  .nav__icon
+    font-size: 1.75rem
+
+  .nav__logo
+    img
+      width: 3rem
