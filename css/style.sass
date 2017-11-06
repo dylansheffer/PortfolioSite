@@ -74,12 +74,24 @@ body
   left: 0
   width: $nav-width
   background: $dark-blue
-  overflow-y: scroll
+  overflow-y: auto
+  overflow-x: hidden
   display: flex
   flex-direction: column
   text-align: center
   align-items: baseline
   justify-content: space-between
+  &::-webkit-scrollbar-track
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+    border-radius: 5px
+    background-color: rgba(245, 245, 245, .1)
+  &::-webkit-scrollbar
+    width: 5px
+    background-color: rgba(245, 245, 245, .1)
+  &::-webkit-scrollbar-thumb
+    border-radius: 5px
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+    background-color: lighten($dark-blue, 30%)
 
 .nav__item
   width: $nav-width
@@ -171,7 +183,7 @@ body
 
 @media screen and (max-height: 600px)
   .nav
-    overflow: scroll
+    overflow-y: scroll
     display: block
 
   .nav__icon

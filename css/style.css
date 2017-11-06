@@ -243,7 +243,8 @@ body {
   left: 0;
   width: 5rem;
   background: #242a31;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -258,6 +259,23 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.nav::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: rgba(245, 245, 245, 0.1);
+}
+
+.nav::-webkit-scrollbar {
+  width: 5px;
+  background-color: rgba(245, 245, 245, 0.1);
+}
+
+.nav::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #657689;
 }
 
 .nav__item {
@@ -370,7 +388,7 @@ body {
 
 @media screen and (max-height: 600px) {
   .nav {
-    overflow: scroll;
+    overflow-y: scroll;
     display: block;
   }
   .nav__icon {
