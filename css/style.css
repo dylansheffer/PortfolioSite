@@ -223,7 +223,7 @@ body {
     margin: 50px;
   }
   .latest-work {
-    background-color: #242a31;
+    background-color: #283645;
     min-height: 50vh;
     -ms-flex-preferred-size: auto;
         flex-basis: auto;
@@ -236,9 +236,13 @@ body {
   .latest-work__header {
     grid-column: 1 / 4;
   }
+  .latest-work__title {
+    text-decoration: none;
+    color: #EEE;
+  }
   .footer {
-    background-color: tomato;
-    color: black;
+    background-color: #242a31;
+    color: #707E8C;
     -ms-flex-preferred-size: 5vh;
         flex-basis: 5vh;
   }
