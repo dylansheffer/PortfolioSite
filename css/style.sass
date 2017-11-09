@@ -13,72 +13,69 @@ body
 
 .wrapper
   max-width: 100%
-  margin: 0 20px
+  margin: 0 auto
   display: flex
   flex-direction: column
 
-@media screen and (min-width: 600px)
-  .wrapper
-    margin: 0 auto
 
-  .content
-    padding: 2rem 5rem 2rem ($nav-width + 5)
-    color: white
+.content
+  padding: 2rem 5rem 2rem ($nav-width + 5)
+  color: white
 
-  $hero__image--height: 410px
-  $hero__image--width: 359px
+$hero__image--height: 410px
+$hero__image--width: 359px
 
-  .hero
-    padding: 0rem 0rem 0rem $nav-width;
-    background-color: $light-blue
-    height: 450px
-    display: grid
-    grid-template-columns: 1fr 2fr
-    grid-template-areas: "hero__image hero__heading" "hero__image hero__subtext" "hero__image hero__subtext"
+.hero
+  padding: 0rem 0rem 0rem $nav-width;
+  background-color: $light-blue
+  height: 450px
+  display: grid
+  grid-template-columns: 1fr 2fr
+  grid-template-areas: "hero__image hero__heading" "hero__image hero__subtext" "hero__image hero__subtext"
 
 
-  .hero__image
-    grid-area: hero__image
-    position: relative
-    img
-      position: absolute
-      bottom: 0
-      left: 0
-      height: 400px
+.hero__image
+  grid-area: hero__image
+  position: relative
+  img
+    position: absolute
+    bottom: 0
+    left: 0
+    height: 400px
 
-  .hero__heading
-    grid-area: hero__heading
-    margin: 100px 50px
-
-
-  .hero__subtext
-    grid-area: hero__subtext
-    margin: 50px
+.hero__heading
+  grid-area: hero__heading
+  margin: 100px 50px
 
 
-  .latest-work
-    background-color: #283645
-    min-height: 50vh
-    flex-basis: auto
-    display: grid
-    grid-template-columns: repeat(3, 1fr)
-    //align-content: space-around
-    align-items: center
-
-  .latest-work__header
-    grid-column: 1 / 4
-
-  .latest-work__item
+.hero__subtext
+  grid-area: hero__subtext
+  margin: 50px
 
 
-  .latest-work__title
-    text-decoration: none
-    color: #EEE
+.latest-work
+  background-color: #283645
+  min-height: 50vh
+  flex-basis: auto
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  //align-content: space-around
+  align-items: center
 
-  .footer
-    background-color: $dark-blue
-    color: #707E8C
-    flex-basis: 5vh
+.latest-work__header
+  grid-column: 1 / 4
+
+.latest-work__item
+
+
+.latest-work__title
+  text-decoration: none
+  color: #EEE
+
+.footer
+  background-color: $dark-blue
+  color: #707E8C
+  flex-basis: 5vh
 
 
 .nav
@@ -206,3 +203,16 @@ body
   .nav__logo
     img
       width: 3rem
+
+@media screen and (max-width: 1000px)
+  .hero
+    grid-template-areas: "hero__heading" "hero__subtext" "hero__subtext"
+
+  .hero__image
+    display: none
+
+  .hero__heading
+    grid-column-end: -1
+
+  .hero__subtext
+    grid-column-end: -1
