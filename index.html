@@ -2,6 +2,7 @@
     <title>Portfolio</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="js/dylan.js"></script>
 </head>
 <body>
 
@@ -10,7 +11,7 @@
                 <a href="#" class="nav__item nav__logo">
                   <img class="" src="img/logo.svg" alt="Logo">
                 </a>
-                <a href="#" title="About" class="nav__item nav__link nav__item--active">
+                <a href="#" title="About" class="nav__item nav__link">
                     <span class="fa fa-user nav__icon"></span>
                     <span class="label">About</span>
                 </a>
@@ -51,25 +52,11 @@
           <div class="latest-work content">
             <h1 class="latest-work__header">What I've Been Up To</h1>
             <a href="#" class="latest-work__item"><h3 class="latest-work__title">Test Title</h3><img src="http://via.placeholder.com/350x250"></a>
-            <a href="#" class="latest-work__item"><h3 class="latest-work__title">Test Title</h3><img src="http://via.placeholder.com/350x250"></a>
-            <a href="#" class="latest-work__item"><h3 class="latest-work__title">Test Title</h3><img src="http://via.placeholder.com/350x250"></a>
-            <a href="#" class="latest-work__item"><h3 class="latest-work__title">Test Title</h3><img src="http://via.placeholder.com/350x250"></a>
+            <a href="#" class="latest-work__item"><h3 class="latest-work__title">Another</h3><img src="http://via.placeholder.com/350x250"></a>
+            <a href="#" class="latest-work__item"><h3 class="latest-work__title">Yet</h3><img src="http://via.placeholder.com/350x250"></a>
+            <a href="#" class="latest-work__item"><h3 class="latest-work__title">Final</h3><img src="http://via.placeholder.com/350x250"></a>
           </div>
 
           <footer class="footer content">&copy; 2017 Dylan Sheffer</footer>
         </div>
-
-  <script>
-    document.onreadystatechange = () => {
-      const noun = document.querySelector("#noun");
-      let nouns = ["Developer", "Designer", "Bartender", "Tea Enthusiast","Dog Owner"];
-      noun.innerHTML = nouns[0];
-      let num = 0;
-
-      window.setInterval(() => {
-        num >= nouns.length - 1 ? num = 0 : num++;
-        noun.innerHTML = nouns[num];
-      }, 1000)
-    }
-  </script>
 </body>
