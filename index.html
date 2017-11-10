@@ -41,7 +41,10 @@
 
           <div class="hero content">
             <div class="hero__image"><img src="img/profile.png" alt="Dylan Sheffer"></div>
-            <h1 class="hero__heading">Hi, I'm Dylan Sheffer and I am a</h1>
+            <h1 class="hero__heading">Hi, I'm Dylan Sheffer and I am a
+              <span id="noun">
+              </span>
+            </h1>
             <p class="hero__subtext">I enjoy making things for the web, drinking tea, and making cocktails. You can follow my work on GitHub and Twitter.</p>
           </div>
 
@@ -55,4 +58,18 @@
 
           <footer class="footer content">&copy; 2017 Dylan Sheffer</footer>
         </div>
+
+  <script>
+    document.onreadystatechange = () => {
+      const noun = document.querySelector("#noun");
+      let nouns = ["Developer", "Designer", "Bartender", "Tea Enthusiast","Dog Owner"];
+      noun.innerHTML = nouns[0];
+      let num = 0;
+
+      window.setInterval(() => {
+        num >= nouns.length - 1 ? num = 0 : num++;
+        noun.innerHTML = nouns[num];
+      }, 1000)
+    }
+  </script>
 </body>
