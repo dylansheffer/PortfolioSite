@@ -52,6 +52,11 @@ $hero__image--width: 359px
   grid-area: hero__subtext
   margin: 50px
 
+span#noun
+  background: rgba(252, 238, 39, 0.9)
+  padding: 5px
+  border-radius: 10px
+  color: $dark-blue
 
 .latest-work
   background-color: #283645
@@ -103,6 +108,27 @@ $hero__image--width: 359px
     border-radius: 5px
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
     background-color: lighten($dark-blue, 30%)
+
+.show-menu
+  display: none
+  color: #ffffff
+  text-decoration: none
+  background: $light-blue
+  text-align: center
+  padding: 10px 0
+
+.mobile-nav
+  display: none
+
+.mobile-nav__logo
+  display: none
+
+#show-menu-checkbox
+  display: none
+
+#show-menu-checkbox:checked ~ .nav__item,
+#show-menu-checkbox:checked ~ .nav__social
+  display: none
 
 .nav__item
   width: $nav-width
@@ -218,3 +244,59 @@ $hero__image--width: 359px
   .hero__subtext
     grid-column-end: -1
     justify-self: center
+
+  .latest-work
+    justify-content: center
+
+  .latest-work__header
+    text-align: center
+
+@media screen and (max-width: 760px)
+  .nav
+    position: relative
+    flex-direction: column
+    width: 100%
+    overflow: auto
+
+  .nav__item
+    width: 100%
+    display: flex
+    flex-direction: row
+    align-content: center
+    justify-content: center
+
+  .nav > .nav__item
+    padding: 15px
+
+  .nav__logo
+    display: none
+
+  .nav__label
+    font-size: 1.5rem
+
+  .nav > .nav__item > .nav__icon
+    display: none
+
+  .nav__social
+    display: flex
+    justify-content: space-between
+    align-content: center
+    width: 100%
+
+  .nav__social > .nav__item
+    flex-basis: 100px
+
+  .mobile-nav
+    display: flex
+    background-color: $dark-blue
+
+  .mobile-nav__logo
+    display: inline-flex
+    img
+      width: 50px
+
+  .show-menu
+    display: inline-flex
+
+  .nav__link
+    display: inline
