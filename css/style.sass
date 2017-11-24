@@ -111,11 +111,6 @@ span#noun
 
 .show-menu
   display: none
-  color: #ffffff
-  text-decoration: none
-  background: $light-blue
-  text-align: center
-  padding: 10px 0
 
 .mobile-nav
   display: none
@@ -129,6 +124,7 @@ span#noun
 #show-menu-checkbox:checked ~ .nav__item,
 #show-menu-checkbox:checked ~ .nav__social
   display: none
+
 
 .nav__item
   width: $nav-width
@@ -256,7 +252,6 @@ span#noun
     position: relative
     flex-direction: column
     width: 100%
-    overflow: auto
 
   .nav__item
     width: 100%
@@ -282,21 +277,37 @@ span#noun
     justify-content: space-between
     align-content: center
     width: 100%
+    margin-top: 15px
 
   .nav__social > .nav__item
     flex-basis: 100px
 
   .mobile-nav
     display: flex
+    justify-content: space-between
     background-color: $dark-blue
 
   .mobile-nav__logo
-    display: inline-flex
+    display: inherit
     img
       width: 50px
 
   .show-menu
-    display: inline-flex
+    color: #eee
+    font-size: 30px
+    text-decoration: none
+    text-align: center
+    padding: 0 15px
+    display: inherit
+    align-self: center
+    cursor: pointer
+
 
   .nav__link
     display: inline
+    &.nav__item--active, &:hover
+        border-right: 2px solid transparent
+        background-color: lighten($dark-blue, 5%)
+
+  .drop-shadow
+    filter: none
