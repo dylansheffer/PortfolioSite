@@ -311,7 +311,7 @@ span#noun {
   background-color: #657689;
 }
 
-.show-menu {
+#show-menu {
   display: none;
 }
 
@@ -479,6 +479,9 @@ span#noun {
 }
 
 @media screen and (max-width: 760px) {
+  .nav--invisible {
+    display: none;
+  }
   .nav {
     position: relative;
     -webkit-box-orient: vertical;
@@ -545,7 +548,7 @@ span#noun {
   .mobile-nav__logo img {
     width: 50px;
   }
-  .show-menu {
+  #show-menu {
     color: #eee;
     font-size: 30px;
     text-decoration: none;
