@@ -200,6 +200,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-areas: "hero__image hero__heading" "hero__image hero__subtext" "hero__image hero__subtext";
+  text-align: center;
 }
 
 .hero__image {
@@ -222,6 +223,7 @@ body {
 .hero__subtext {
   grid-area: hero__subtext;
   margin: 50px;
+  font-size: 20px;
 }
 
 span#noun {
@@ -569,6 +571,12 @@ span#noun {
   .drop-shadow {
     -webkit-filter: none;
             filter: none;
+  }
+  .hero {
+    padding: 0;
+  }
+  .content {
+    padding: 2rem 0;
   }
 }
  

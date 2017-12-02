@@ -26,12 +26,13 @@ $hero__image--height: 410px
 $hero__image--width: 359px
 
 .hero
-  padding: 0rem 0rem 0rem $nav-width;
+  padding: 0rem 0rem 0rem $nav-width
   background-color: $light-blue
   height: 450px
   display: grid
   grid-template-columns: 1fr 2fr
   grid-template-areas: "hero__image hero__heading" "hero__image hero__subtext" "hero__image hero__subtext"
+  text-align: center
 
 
 .hero__image
@@ -51,6 +52,7 @@ $hero__image--width: 359px
 .hero__subtext
   grid-area: hero__subtext
   margin: 50px
+  font-size: 20px
 
 span#noun
   background: rgba(252, 238, 39, 0.9)
@@ -314,3 +316,9 @@ span#noun
 
   .drop-shadow
     filter: none
+
+  .hero
+    padding: 0
+
+  .content
+    padding: 2rem 0
